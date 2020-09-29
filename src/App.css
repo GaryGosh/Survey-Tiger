@@ -9,6 +9,9 @@
 
 .home > button {
   margin-top: 20px;
+}
+
+.MuiButton-root {
   height: 3.5em;
   width: 12em;
 }
@@ -16,4 +19,24 @@
 .header > h1 {
   color: #358873;
   font-size: 3em;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(175, 170, 170);
+  border-radius: 4px;
+  max-width: 40vw;
+  height: 2em;
+}
+
+.question > span {
+  background: gray;
+  padding: .4em .7em;
+  font-weight: 900;
+}
+
+.question > div {
+  flex: 1;
 }
