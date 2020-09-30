@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
 
+let textInput = React.createRef();
 export class MultiSelect extends Component {
-  constructor() {
-    super();
-    this.onInputChange = this.onInputChange.bind(this);
-  }
+
+    constructor() {
+        super()
+        this.addAnswer = this.addAnswer.bind(this);
+    }
   state = {
     answers: [{ text: "" }],
   };
@@ -22,15 +24,13 @@ export class MultiSelect extends Component {
     }
   };
 
-  addAnswer = function (e) {
-    console.log("I'm inside");
-    this.onInputChange();
-    /* const value = e.target.value;
-    if (value.trim() !== "") {
-      this.setState({
-        answers: [{ text: value }, ...this.state.answers],
-      });
-    } */
+  addAnswer = function () {
+    let textContent = textInput.current.value;
+    console.log(textContent);
+    this.setState({
+    answers: [{ text: textContent }, ...this.state.answers],
+    });
+    textInput.current.value = "";
   };
 
   render() {
@@ -45,6 +45,7 @@ export class MultiSelect extends Component {
         <div className="multiSelect__answer">
           <input
             type="text"
+            ref={textInput}
             onKeyDown={this.onInputChange}
             placeholder="Type answer here"
           />
