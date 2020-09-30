@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
+import Button from "@material-ui/core/Button";
 
 let textInput = React.createRef();
 export class MultiSelect extends Component {
-
-    constructor() {
-        super()
-        this.addAnswer = this.addAnswer.bind(this);
-    }
+  constructor() {
+    super();
+    this.addAnswer = this.addAnswer.bind(this);
+  }
   state = {
     answers: [{ text: "" }],
   };
@@ -28,7 +28,7 @@ export class MultiSelect extends Component {
     let textContent = textInput.current.value;
     console.log(textContent);
     this.setState({
-    answers: [{ text: textContent }, ...this.state.answers],
+      answers: [{ text: textContent }, ...this.state.answers],
     });
     textInput.current.value = "";
   };
@@ -60,6 +60,18 @@ export class MultiSelect extends Component {
             <button>-</button>
           </div>
         ))}
+
+        
+        {this.state.answers.length === 5 ?
+            <div className="multiSelect__button">
+            <Button variant="contained" color="secondary">
+                Add Question
+            </Button>
+            <Button variant="contained" color="secondary">
+                Publish
+            </Button>
+            </div> : null
+        }
       </div>
     );
   }
