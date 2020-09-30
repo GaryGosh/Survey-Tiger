@@ -40,3 +40,49 @@
 .question > div {
   flex: 1;
 }
+
+.createSurvey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.multiSelect {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+.multiSelect__answer > input {
+  height: 1.7em;
+}
+
+.multiSelect__answerList {
+  margin-top: .7em;
+  min-width: 14.7em;
+  display: flex;
+}
+
+.multiSelect__answerList > span {
+  padding: .3em;
+  flex: 1;
+  border: 1px solid rgb(175, 170, 170);
+  border-radius: 4px;
+}
+
+.multiSelect__answer > button,
+.multiSelect__answerList > button {
+  background: white;
+  border: 1px solid rgb(175, 170, 170);
+  border-radius: 4px;
+  color: coral;
+  font-weight: 900;
+  padding: .3em .7em;
+}
+
+.ansButton {
+  margin: .5em !important;
+}

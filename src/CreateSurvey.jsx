@@ -28,7 +28,7 @@ function CreateSurvey() {
   };
 
   return (
-    <div>
+    <div className="createSurvey">
       <Header />
 
       <FormControl variant="filled" className={classes.formControl}>

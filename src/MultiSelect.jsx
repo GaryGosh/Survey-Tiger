@@ -73,10 +73,10 @@ export class MultiSelect extends Component {
         
         {this.state.answers.length === 5 ?
             <div className="multiSelect__button">
-            <Button variant="contained" color="secondary">
+            <Button className="ansButton" variant="contained" color="secondary">
                 Add Question
             </Button>
-            <Button variant="contained" color="secondary">
+            <Button className="ansButton" variant="contained" color="secondary">
                 Publish
             </Button>
             </div> : null
