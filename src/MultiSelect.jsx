@@ -3,13 +3,14 @@ import "./App.css";
 import Button from "@material-ui/core/Button";
 
 let textInput = React.createRef();
+let index = 1;
 export class MultiSelect extends Component {
   constructor() {
     super();
     this.addAnswer = this.addAnswer.bind(this);
   }
   state = {
-    answers: [{ text: "" }],
+    answers: [{ text: "", id: index }],
   };
 
   onInputChange = (e) => {
@@ -17,7 +18,7 @@ export class MultiSelect extends Component {
       const value = e.target.value;
       if (value.trim() !== "") {
         this.setState({
-          answers: [{ text: value }, ...this.state.answers],
+          answers: [{ text: value, id: index++ }, ...this.state.answers],
         });
         e.target.value = "";
       }
@@ -32,6 +33,14 @@ export class MultiSelect extends Component {
     });
     textInput.current.value = "";
   };
+
+  deleteButton = (id) => {
+    this.setState({
+        answers: this.state.answers.filter(
+            (ans) => ans.id !== id
+        )
+    })
+  }
 
   render() {
     return (
@@ -57,7 +66,7 @@ export class MultiSelect extends Component {
           <div className="multiSelect__answerList">
             <span>{ans.text}</span>
             <button>+</button>
-            <button>-</button>
+            <button id={this.state.answers.id} onClick={this.deleteButton.bind(this, ans.id)}>-</button>
           </div>
         ))}
 
