@@ -27,7 +27,8 @@
   align-items: center;
   border: 1px solid rgb(175, 170, 170);
   border-radius: 4px;
-  max-width: 40vw;
+  max-width: 50vw;
+  width: 40vw;
   height: 2em;
 }
 
@@ -58,11 +59,12 @@
 
 .multiSelect__answer > input {
   height: 1.7em;
+  width: 19.3em;
 }
 
 .multiSelect__answerList {
   margin-top: .7em;
-  min-width: 14.7em;
+  min-width: 20em;
   display: flex;
 }
 
@@ -84,5 +86,6 @@
 }
 
 .ansButton {
-  margin: .5em !important;
+  margin: .8em !important;
+  height: 2em !important;
 }

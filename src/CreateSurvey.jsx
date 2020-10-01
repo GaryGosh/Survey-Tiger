@@ -18,13 +18,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+let toBeRendered;
 function CreateSurvey() {
   const classes = useStyles();
   const [mode, setMode] = React.useState("");
 
   const handleChange = (event) => {
     setMode(event.target.value);
-    alert(`mode ${mode}`);
+    if(mode === 2) {
+      toBeRendered = <MultiSelect />
+    } 
   };
 
   return (
@@ -44,7 +47,7 @@ function CreateSurvey() {
         </Select>
       </FormControl>
 
-      <MultiSelect />
+      {toBeRendered}
     </div>
   );
 }
