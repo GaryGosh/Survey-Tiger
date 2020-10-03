@@ -23,12 +23,18 @@ let toBeRendered;
 function CreateSurvey() {
   const classes = useStyles();
   const [mode, setMode] = React.useState("");
+  const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
     setMode(event.target.value);
     if(mode === 2) {
       toBeRendered = <MultiSelect />
     } 
+  };
+
+  const handleOpen = () => {
+    console.log("Opening drop down");
+    setOpen(true);
   };
 
   return (
@@ -42,6 +48,8 @@ function CreateSurvey() {
           id="demo-simple-select-filled"
           value={mode}
           onChange={handleChange}
+          open={open}
+          handleOpen={handleOpen}
         >
           <MenuItem value={1}>Multi-select</MenuItem>
           <MenuItem value={2}>Single select</MenuItem>
@@ -49,7 +57,7 @@ function CreateSurvey() {
       </FormControl>
 
       {toBeRendered}
-      <SingleSelect />
+      <SingleSelect handleOpen={handleOpen} />
     </div>
   );
 }

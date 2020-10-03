@@ -42,6 +42,7 @@ export default class SingleSelect extends Component {
             className="ansButtonSingle"
             variant="contained"
             color="secondary"
+            onClick={this.props.handleOpen}
           >
             Add Question
           </Button>
