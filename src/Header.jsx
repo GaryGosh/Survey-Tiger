@@ -4,7 +4,7 @@ import './App.css';
 function Header() {
     return (
         <div className="header">
-            <h1>Survey Tiger</h1>
+            <h1> 🐾 Survey Tiger</h1>
         </div>
     )
 }
