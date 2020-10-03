@@ -7,6 +7,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import MultiSelect from "./MultiSelect";
+import SingleSelect from "./SingleSelect";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -48,6 +49,7 @@ function CreateSurvey() {
       </FormControl>
 
       {toBeRendered}
+      <SingleSelect />
     </div>
   );
 }

@@ -30,6 +30,7 @@
   max-width: 50vw;
   width: 40vw;
   height: 2em;
+  margin-top: .5em;
 }
 
 .question > span {
@@ -88,4 +89,19 @@
 .ansButton {
   margin: .8em !important;
   height: 2em !important;
+}
+
+.singleSelect__answerList > div{
+  width: 18em;
+  height: 1.5em;
+  border: 1px solid rgb(175, 170, 170);
+  border-radius: 4px;
+  padding: .5em;
+  margin-top: .8em;
+  cursor: pointer;
+}
+
+.ansButtonSingle {
+  margin: 2.5em 1.2em !important;
+  height: 3em !important;
 }
