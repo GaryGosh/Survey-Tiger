@@ -29,7 +29,8 @@ function CreateSurvey() {
     setMode(event.target.value);
     if(mode === 2) {
       toBeRendered = <MultiSelect />
-    } 
+    }
+    setOpen(false);
   };
 
   const handleOpen = () => {
